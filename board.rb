@@ -18,7 +18,7 @@ class Board
 
     def move_piece(start_pos, end_pos)
         raise "There is no piece to move" if self[start_pos].nil?
-        
+
         piece = self[start_pos]
         self[start_pos] = nil
         self[end_pos] = piece
@@ -29,7 +29,7 @@ class Board
             row.each_with_index do |col, col_idx|
                 pos = [row_idx, col_idx]
                 if row_idx <= 1 || row_idx >= 6
-                    self[pos] = Pieces.new
+                    self[pos] = Piece.new
                 else
                     self[pos] = nil
                 end
